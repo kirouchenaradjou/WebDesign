@@ -1,0 +1,81 @@
+#navbar-inverse{
+	background-color: #003366;
+}
+.abc{
+	list-style-type: none;
+
+}
+
+.footerId{
+   list-style-type: none;
+   margin-top: 10%;
+   padding: 0;
+}
+
+
+.footerId2{
+	margin-top: 120%;
+} 
+
+/* HOME PAGE */
+.container .jumbotron {
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+}
+
+#menu-tile, #specials-tile, #map-tile {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative; 
+  /* border: 2px solid #3F0C1F; */
+  overflow: hidden;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#menu-tile {
+  background: url('images/clutches.jpg') no-repeat;
+  background-position: center;
+}
+#specials-tile {
+  background: url('images/sneakers.jpg') no-repeat;
+  background-position: center;
+}
+
+#map-tile {
+  background: url('images/sunglasses.jpg') no-repeat;
+  background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.4em;
+  background-color: #000;
+  color: #fff;
+  opacity: .6;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+} 
