@@ -1,0 +1,76 @@
+body { background-color: #F5F5DC;
+      color: #2E0000;
+      font-family: Verdana,Arial,sans-serif;
+      background-image: url(images/javabackground.gif);
+}
+nav{
+	font-weight: bold;
+	text-align: center;
+	background-color: #E6D6A9;
+	padding: 10px;
+}
+nav a {
+	text-decoration: none;
+	
+}
+
+main
+{
+	padding: 20px;
+		display: block;
+}
+h1{
+	font-family: Georgia,"Times New Roman",serif;
+	background-image: url(images/javalogo.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	margin:0;
+	height: 100px;
+	text-indent: -9999px;
+}
+h2{
+	font-family: Georgia,"Times New Roman",serif;
+}
+h3{
+	background-color: #E6D6A9;
+	text-transform: uppercase;
+}
+header { background-color: #D2B48C;
+}
+footer {
+	background-color: #D2B48C;
+	color : #000000;
+}
+dt{
+	font-weight: bold;
+}
+ul{
+list-style-image: url(images/marker.png);
+}
+#wrapper{
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	background-color: #F5F5DC;
+	min-width:960px ;
+	max-width: 2048px;
+	box-shadow: offset 3px 3px 3px #2E0000;
+
+}
+footer{
+text-align: center;
+font-style: italic;
+font-size: .60em;
+padding: 10px;
+}
+#hero{
+	height: 300px;
+	color: #F5F5DC;
+	background-image:url(images/windingroad.jpg); ;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+}
+.news{
+	margin-left: 20%;
+	margin-right: 20%
+}

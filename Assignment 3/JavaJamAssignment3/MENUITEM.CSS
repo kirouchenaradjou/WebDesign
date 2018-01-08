@@ -1,0 +1,13 @@
+nav li a{text-decoration: none;}
+.dropdown{position: absolute; left:500px;width: 150px;top: 145px; opacity: 0;visibility: hidden;transition: ease-out .35s;-moz-transition: ease-out .35s;-webkit-transition: ease-out .35s;}
+nav li{float: none;padding: 5px;background-color: #E6D6A9;border-left: 1px}
+nav li:first-child{border: none;}
+nav li:hover{background-color: #FFFFFF;transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+nav li:hover a{color: maroon;transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+/*First Level*/
+.subs {display:block;left: -45px;position: relative;top: 0px;width: 175px;border-left: none !important; border-bottom: 1px dotted #fff !important;}
+.subs:last-child{border: none !important;}
+.hassubs:hover .dropdown,.hassubs .hassubs:hover .dropdown{opacity: 1;visibility: visible; transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+nav li:hover ul a,nav li:hover ul li ul li a{color: white;}
+nav li ul li:hover,nav li ul li ul li:hover{background: #fff;transition: ease-in-out .35s;-moz-transition: ease-in-out .35s;-webkit-transition: ease-in-out .35s;}
+nav li ul li:hover a,nav li ul li ul li:hover a{color: maroon;transition: ease-in-out .35s;-moz-transition: ease-in-out .35s;-webkit-transition: ease-in-out .35s;}

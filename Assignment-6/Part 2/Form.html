@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form id="myForm" method="post" action="feedbackComplete.html">
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" />Miss
+			<input type="radio" name="title" id="mr" value="mr" />Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" />Mrs.
+			<br><br>
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
+			<br><br>
+			<div id="errorMsgFName" style="display:none;color:red">
+			Invalid input for your first name. Only text values permitted.
+			<br /><br />
+			</div>
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+			<br><br>
+			<div id="errorMsgLName" style="display:none;color:red">
+			Invalid input for your last name. Only text values permitted.
+			<br /><br />
+			</div>
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId"  placeholder="yourname@domain.com" />
+			<br><br>
+			<div id="errorMsgEmailId" style="display:none;color:red">
+			Invalid input for your email id. Please enter email id in proper format.
+			<br /><br />
+			</div>
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<br><br>
+			<div id="errorMsgPhone" style="display:none;color:red">
+			Invalid input for your phone number. Only numerical values permitted and in the requested format xxx-xxx-xxxx.
+			<br /><br />
+			</div>
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+			<br><br>
+             <div id="errorMsgZip" style="display:none;color:red">
+			Invalid input for zip code. Only numerical values permitted and in the requested format xxxxx.
+			<br /><br />
+			</div>
+            <label for="zipcode">How did you hear*:</label>
+			<input class="myCheckBox" type='checkbox' name="source" value="facebook" id="box1"/> Facebook
+            <input class="myCheckBox" type='checkbox' name="source" value="google" id="box2" /> Google
+            <input class="myCheckBox" type='checkbox' name="source" value="yelp" id="box3"/> Yelp 
+			<br><br> 
+              <div id="errorMsgCheckBox" style="display:none;color:red">
+			Atleast one checkbox must be selected
+			<br /><br />
+			</div>
+			<label for="comments">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<br><br>
+			<input type="Submit" id="submit">
+			<input type="Reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+
+ <script>
+ $(document).onload(function(){
+ console.log("Onload window");
+ }
+ $(document).ready(function(){
+ 	$(function(){
+       $("input:not(':input[type=checkbox]')").prop('required',true);
+        $("textarea").prop('required',true);
+		console.log("On ready");
+});
+
+    $('#firstName').blur(function(){
+         var regExName = /^[a-zA-Z]+$/
+         var inputVal = $(this).val();
+         if(!regExName.test(inputVal)) {
+		$('#errorMsgFName').css( 'display', 'block');
+		 $(this).val('');
+         }
+         else
+         {
+         	$('#errorMsgFName').css( 'display', 'none');
+         }
+		 
+    });
+    $('#lastName').blur(function(){
+         var regExName = /^[a-zA-Z]+$/
+         var inputVal = $(this).val();
+         if(!regExName.test(inputVal)) {
+		$('#errorMsgLName').css( 'display', 'block');
+		$(this).val('');
+         }
+         else
+         {
+         	$('#errorMsgLName').css( 'display', 'none');
+         }
+		 
+    });
+    $('#emailId').blur(function(){
+	 var regExEmail = /([\w\.]+)@([\w\.]+)\.(\w+)/;
+         var inputVal = $(this).val();
+         if(!regExEmail.test(inputVal)) {
+		$('#errorMsgEmailId').css( 'display', 'block');
+		$(this).val('');
+         }
+         else
+         {
+         	$('#errorMsgEmailId').css( 'display', 'none');
+         }
+		 
+    });
+    $('#phoneNumber').blur(function(){
+	 var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
+         var inputVal = $(this).val();
+         if(!regExPhone.test(inputVal)) {
+		$('#errorMsgPhone').css( 'display', 'block');
+		$(this).val('');
+         }
+         else
+         {
+         	$('#errorMsgPhone').css( 'display', 'none');
+         }
+		 
+    });
+      $('#zipcode').blur(function(){
+	 var regExZip = /^\d{5}(?:[\s-]\d{4})?$/;
+         var inputVal = $(this).val();
+         if(!regExZip.test(inputVal)) {
+		$('#errorMsgZip').css( 'display', 'block');
+		$(this).val('');
+         }
+         else
+         {
+         	$('#errorMsgZip').css( 'display', 'none');
+         }
+		 
+    });
+
+   
+
+ $('#submit').on('click', function() {
+	if  ($('#box1').prop('checked') || $('#box2').prop('checked') || $('#box3').prop('checked')) {
+$('#errorMsgCheckBox').css( 'display', 'none');
+}
+else
+	{
+			$('#errorMsgCheckBox').css( 'display', 'block');
+			return false;
+
+	}
+});  
+
+
+});
+ </script>
+
+ </body>
+</html>
